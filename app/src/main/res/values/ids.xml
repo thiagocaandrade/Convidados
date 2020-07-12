@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="recycler_absents" type="id" />
+    <item name="recycler_all_guests" type="id" />
+    <item name="recycler_presents" type="id" />
+</resources>
