@@ -16,13 +16,13 @@ class PresentFragment : Fragment() {
     private lateinit var presentViewModel: PresentViewModel
 
     override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
         presentViewModel =
-                ViewModelProviders.of(this).get(PresentViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_gallery, container, false)
+            ViewModelProviders.of(this).get(PresentViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_present, container, false)
         val textView: TextView = root.findViewById(R.id.text_gallery)
         presentViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
