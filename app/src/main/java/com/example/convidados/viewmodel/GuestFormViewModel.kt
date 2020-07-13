@@ -1,11 +1,9 @@
 package com.example.convidados.viewmodel
 
 import android.app.Application
-import android.content.Context
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.example.convidados.service.model.GuestModel
 import com.example.convidados.service.repository.GuestRepository
 

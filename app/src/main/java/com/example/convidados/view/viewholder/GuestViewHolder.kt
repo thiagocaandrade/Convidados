@@ -39,3 +39,4 @@ class GuestViewHolder(itemView: View, private val listener: GuestListener) :
         }
 
     }
+}

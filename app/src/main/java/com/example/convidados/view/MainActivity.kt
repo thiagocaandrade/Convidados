@@ -2,6 +2,7 @@ package com.example.convidados.view
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.appcompat.app.ActionBar
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -24,10 +25,13 @@ class MainActivity : AppCompatActivity() {
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
+
         val fab: FloatingActionButton = findViewById(R.id.fab)
         fab.setOnClickListener {
             startActivity(Intent(applicationContext, GuestFormActivity::class.java))
         }
+
+
 
         setupNavigation()
     }

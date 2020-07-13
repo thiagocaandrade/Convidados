@@ -8,18 +8,18 @@
     <fragment
         android:id="@+id/nav_all"
         android:name="com.example.convidados.view.AllGuestsFragment"
-        android:label="@string/menu_all_guests"
+        android:label="@string/menu_todos_convidados"
         tools:layout="@layout/fragment_all" />
 
     <fragment
         android:id="@+id/nav_presents"
         android:name="com.example.convidados.view.PresentFragment"
-        android:label="@string/menu_presents"
+        android:label="@string/menu_presentes"
         tools:layout="@layout/fragment_present" />
 
     <fragment
         android:id="@+id/nav_absents"
         android:name="com.example.convidados.view.AbsentFragment"
-        android:label="@string/menu_absents"
+        android:label="@string/menu_ausentes"
         tools:layout="@layout/fragment_absent" />
 </navigation>
