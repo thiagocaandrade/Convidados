@@ -7,6 +7,7 @@ App convidados que adiciona, edita e deleta pessoas em Kotlin, app desenvolvido 
  - RecyclerView 
  - Navigation Drawer
  - Fragments
+ - Room
  
 <p align="center">
  <img src="https://user-images.githubusercontent.com/50715392/87313502-5aa64100-c4f8-11ea-83c9-c8200cafffee.gif" width="250" height="500" />
