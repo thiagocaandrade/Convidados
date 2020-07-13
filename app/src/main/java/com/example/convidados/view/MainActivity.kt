@@ -16,7 +16,7 @@ import com.example.convidados.R
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var appBarConfiguration: AppBarConfiguration
+    private lateinit var mAppBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,26 +25,39 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         val fab: FloatingActionButton = findViewById(R.id.fab)
-        fab.setOnClickListener{
-            startActivity (Intent(applicationContext, GuestFormActivity::class.java))
+        fab.setOnClickListener {
+            startActivity(Intent(applicationContext, GuestFormActivity::class.java))
         }
 
-        val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
-        val navView: NavigationView = findViewById(R.id.nav_view)
-        val navController = findNavController(R.id.nav_host_fragment)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        appBarConfiguration = AppBarConfiguration(setOf(
-            R.id.nav_all,
-            R.id.nav_presents,
-            R.id.nav_absents
-        ), drawerLayout)
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
+        setupNavigation()
     }
+
+    // Responsável por criar o menu superior direito (3 pontinhos)
+    /* override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        menuInflater.inflate(R.menu.main, menu)
+        return true
+    } */
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment)
-        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+        return navController.navigateUp(mAppBarConfiguration) || super.onSupportNavigateUp()
+    }
+
+    private fun setupNavigation() {
+        val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
+        val navView: NavigationView = findViewById(R.id.nav_view)
+        val navController = findNavController(R.id.nav_host_fragment)
+
+        mAppBarConfiguration =
+            AppBarConfiguration.Builder(
+                R.id.nav_all,
+                R.id.nav_presents,
+                R.id.nav_absents
+            )
+                .setDrawerLayout(drawerLayout)
+                .build()
+        setupActionBarWithNavController(navController, mAppBarConfiguration)
+        navView.setupWithNavController(navController)
     }
 }
